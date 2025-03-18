@@ -1,11 +1,23 @@
 import React from "react";
 import Card from "./Card.jsx";
 
-const handlePurchase = (plan) => {
-  alert(`You have selected the ${plan} plan!`);
-};
+
+
+
 
 const Pricing = () => {
+
+  const pricingPlan = [
+    {title: "", description:"", image:"", action: ""},
+    {title: "", description:"", image:"", action: ""},
+    {title: "", description:"", image:"", action: ""},
+  ]
+
+
+  const handlePurchase = (plan) => {
+    alert(`You have selected the ${plan} plan!`);
+  };
+
   return (
     <div className="container mt-4">
       <h1 className="text-center mb-4">Our pricing plans</h1>
