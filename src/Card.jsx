@@ -1,12 +1,17 @@
-import React from "react";
+import React from 'react';
 
-
-const Card = ({title, description, image, buttonAction, buttonText, cardStyle}) => {
-
-    // const handleClick = (msg) => {
-    //     alert(msg);
-    //     console.log(msg);
-    //   }
+const Card = ({
+  title,
+  description,
+  image,
+  buttonAction,
+  buttonText,
+  cardStyle,
+}) => {
+  // const handleClick = (msg) => {
+  //     alert(msg);
+  //     console.log(msg);
+  //   }
 
   return (
     <div className={`card my-3 ${cardStyle}`}>
@@ -18,9 +23,10 @@ const Card = ({title, description, image, buttonAction, buttonText, cardStyle}) 
         <ul>
           <li>Some data</li>
         </ul>
-
       </div>
-      <button className="btn btn-primary" onClick={buttonAction}>{buttonText}</button>
+      <button className="btn btn-primary" onClick={buttonAction}>
+        {buttonText}
+      </button>
     </div>
   );
 };

@@ -1,13 +1,11 @@
-import Counter from "./Counter"
+import Person from "./Person";
 
 export const App = () => {
 
 
   return (
     <>
-
-    <Counter/>
-    
+    <Person/>
     </>
   );
 };
