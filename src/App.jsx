@@ -1,11 +1,8 @@
-import Person from "./Person";
+import ToggleButton from "./ToggleButton";
+
 
 export const App = () => {
-
-
-  return (
-    <>
-    <Person/>
-    </>
-  );
+  return <>
+  <ToggleButton/>
+  </>;
 };
