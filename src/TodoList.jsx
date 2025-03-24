@@ -1,16 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { getTasksAPI, addTaskAPI } from "./service/TodoAPI";
 
 const TodoList = () => {
-  const [tasks, setTasks] = useState([
-    "Learn Basic of React",
-    "Learning The basics of Hooks",
-  ]);
+  const [tasks, setTasks] = useState([]);
 
   const [inputValue, setInputValue] = useState("");
   const [error, setError] = useState("");
 
+  const [reload, setReload] = useState(false);
+
+  useEffect(() => {
+    console.log("Effect executed!");
+    setTasks(getTasksAPI());
+  }, [reload]);
+
   const addTask = () => {
-    // Validation for empty input
+    // Validation for empty input as
     if (inputValue.trim() === "") {
       setError("Task cannot be empty.");
       return;
@@ -28,11 +33,8 @@ const TodoList = () => {
       return;
     }
 
-    const updatedTask = [...tasks, inputValue];
-    setTasks(updatedTask);
-
-    console.log("Add Function Updated");
-
+    addTaskAPI(inputValue.trim());
+    setReload(!reload);
 
     setInputValue("");
     setError("");
@@ -61,9 +63,9 @@ const TodoList = () => {
           {error && <div className="text-danger my-2">{error}</div>}
 
           <ul className="list-group mt-6">
-            {tasks.map((task, index) => (
-              <li className="list-group-item" key={index}>
-                {task}
+            {tasks.map((task) => (
+              <li className="list-group-item" key={task.id}>
+                {task.text}
               </li>
             ))}
           </ul>
