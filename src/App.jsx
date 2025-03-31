@@ -1,11 +1,7 @@
-import CarRentalForm from "./CarRentalForm";
-import TodoList from "./TodoList";
-import ToggleButton from "./ToggleButton";
+import InvitationList from "./InvitationList";
 
 export const App = () => {
-  return (
-    <>
-      <CarRentalForm />
-    </>
-  );
+  return <>
+  <InvitationList/>
+  </>;
 };
