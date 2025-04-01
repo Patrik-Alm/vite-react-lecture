@@ -1,9 +1,11 @@
+import RouterDemo from "./RouterDemo";
 
+// npm install react-router
 
 export const App = () => {
   return (
     <>
-      <h1>Base for React Router</h1>
+      <RouterDemo />
     </>
   );
 };
